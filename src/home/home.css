@@ -1,0 +1,13 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #barcode-list, #barcode-list * {
+    visibility: visible;
+  }
+  #barcode-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
