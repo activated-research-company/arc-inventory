@@ -1,6 +1,7 @@
 @media print {
   body * {
     visibility: hidden;
+    margin: 0px;
   }
   #barcode-list, #barcode-list * {
     visibility: visible;
@@ -9,5 +10,9 @@
     position: absolute;
     left: 0;
     top: 0;
+    width: 8.5in;
+  }
+  @page {
+    margin: 0.5in 0in 0in 0.20in;
   }
 }
