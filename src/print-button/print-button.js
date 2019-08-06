@@ -2,7 +2,7 @@ const m = require('mithril');
 
 function PrintButton() {
   function getPrintIcon() {
-    m('x-icon', { name: 'print' });
+    return m('x-icon', { name: 'print' });
   }
 
   function getPrintLabel() {
@@ -10,7 +10,7 @@ function PrintButton() {
   }
 
   function getPrintButton() {
-    return m('x-button', m('x-box[vertical]'), [getPrintIcon(), getPrintLabel()]);
+    return m('x-button', m('x-box[vertical]', [getPrintIcon(), getPrintLabel()]));
   }
 
   function getPrintLink() {
