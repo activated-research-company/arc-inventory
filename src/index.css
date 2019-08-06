@@ -1,16 +1,16 @@
 body {
-    --primary-color:  rgb(3, 34, 169);
-    --secondary-color: rgb(14, 174, 43);
+  --primary-color:  rgb(3, 34, 169);
+  --secondary-color: rgb(14, 174, 43);
 }
 
 .ma-auto {
-    margin: auto;
+  margin: auto;
 }
 
 .w-15 {
-    width: 15%;
+  width: 15%;
 }
 
 .w-55 {
-    width: 55%;
+  width: 55%;
 }

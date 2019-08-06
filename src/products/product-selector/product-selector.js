@@ -1,33 +1,23 @@
 require('./product-selector.css');
 
-var m = require('mithril');
-var Products = require('../products')
+const m = require('mithril');
+const products = require('../products');
 
 function ProductSelector() {
+  function GetProductMenu() {
+    const vnodes = [];
+    Object.keys(products).forEach((product) => {
+      vnodes.push(
+        m('x-menuitem', { id: `product-${products[product].id}`, product },
+          m('x-label', products[product].label)),
+      );
+    });
+    return m('x-menu', vnodes);
+  }
 
-    function GetProductVnodes(products) {
-        let vnodes = []
-        for (var product in products) {
-            vnodes.push(
-                m("x-menuitem",
-                    {
-                        id:"product-" + products[product].id,
-                        product: product,
-                    }, m("x-label", products[product].label)
-                )
-            );
-        }
-        return vnodes;
-    }
-
-    return {
-        view: vnode => {
-            return m("x-select" + (vnode.attrs.class ? "." + vnode.attrs.class : ""), {
-                ontoggle: vnode.attrs.eventHandler
-            }, m("x-menu", GetProductVnodes(Products)));
-        }
-    }
-
+  return {
+    view: vnode => m('x-select', { ontoggle: vnode.attrs.eventHandler }, GetProductMenu()),
+  };
 }
 
 module.exports = ProductSelector;
