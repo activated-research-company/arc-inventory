@@ -17,17 +17,17 @@ module.exports = {
   },
   HEATER_CABLE_ARC_RTD: {
     id: 'heaterCableArcRtd',
-    label: 'Heater Cable (ARC RTD)',
+    label: 'Heater Cable (40V)',
     barcodeStrategy: {
-      strategy: '{year}{month}{day}{sequence}{type}',
+      strategy: '{fullyear}{month}{day}40{sequence}',
       type: 'ARCRTD',
     },
   },
   HEATER_CABLE_PT100: {
     id: 'heaterCablePt100',
-    label: 'Heater Cable (PT100)',
+    label: 'Heater Cable (120V)',
     barcodeStrategy: {
-      strategy: '{year}{month}{day}{sequence}{type}',
+      strategy: '{fullyear}{month}{day}120{sequence}',
       type: 'PT100',
     },
   },

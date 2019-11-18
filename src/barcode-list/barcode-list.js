@@ -14,10 +14,11 @@ function BarcodeList() {
 
   function GenerateBarcode(strategy, barcodeDate, sequence) {
     let barcode = strategy.strategy;
+    barcode = barcode.replace('{fullyear}', barcodeDate.getFullYear());
     barcode = barcode.replace('{year}', GetZeroPaddedString(barcodeDate.getYear() % 100, 2));
     barcode = barcode.replace('{month}', GetZeroPaddedString(barcodeDate.getMonth() + 1, 2));
     barcode = barcode.replace('{day}', GetZeroPaddedString(barcodeDate.getDate(), 2));
-    barcode = barcode.replace('{sequence}', GetZeroPaddedString(sequence, 3));
+    barcode = barcode.replace('{sequence}', sequence);
     Object.keys(strategy).forEach((property) => {
       barcode = barcode.replace(`{${property}}`, strategy[property]);
     });
